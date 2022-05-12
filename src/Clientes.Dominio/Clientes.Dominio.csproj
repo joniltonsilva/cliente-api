@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Clientes\Enumeradores\" />
     <Folder Include="Clientes\Servicos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Clientes.Biblioteca\Clientes.Biblioteca.csproj" />
   </ItemGroup>
 
 </Project>

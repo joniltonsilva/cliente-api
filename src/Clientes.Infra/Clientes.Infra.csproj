@@ -5,10 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Clientes\Mapeamento\" />
+    <PackageReference Include="EntityFramework" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Clientes.Biblioteca\Clientes.Biblioteca.csproj" />
     <ProjectReference Include="..\Clientes.Dominio\Clientes.Dominio.csproj" />
   </ItemGroup>
 

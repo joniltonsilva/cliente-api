@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Clientes\Enumeradores\" />
+    <Folder Include="Clientes\Servicos\" />
+  </ItemGroup>
+
 </Project>

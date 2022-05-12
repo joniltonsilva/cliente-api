@@ -1,3 +1,4 @@
+using Clientes.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -9,12 +10,14 @@ namespace Clientes.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        private IWebHostEnvironment _env;
+        private IConfiguration _configuration;
 
-        public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
+        {
+            _configuration = configuration;
+            _env = env;
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -23,8 +26,10 @@ namespace Clientes.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Clientes.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = $"API de Clientes", Version = "v1" });
             });
+
+            NativeInjectorBootstrap.ConfigureServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,7 +39,7 @@ namespace Clientes.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Clientes.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", $"API de Clientes v1 - {_env.EnvironmentName}"));
             }
 
             app.UseHttpsRedirection();

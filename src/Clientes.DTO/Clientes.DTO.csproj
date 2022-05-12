@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Clientes\Mapeamento\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Clientes.Dominio\Clientes.Dominio.csproj" />
+    <Folder Include="Clientes\Response\" />
+    <Folder Include="Clientes\Request\" />
   </ItemGroup>
 
 </Project>

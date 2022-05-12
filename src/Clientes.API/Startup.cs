@@ -29,7 +29,7 @@ namespace Clientes.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = $"API de Clientes", Version = "v1" });
             });
 
-            NativeInjectorBootstrap.ConfigureServices(services);
+            NativeInjectorBootstrap.ConfigureServices(services, _configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

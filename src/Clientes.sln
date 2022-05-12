@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clientes.DTO", "Clientes.DT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clientes.Biblioteca", "Clientes.Biblioteca\Clientes.Biblioteca.csproj", "{274BEFA2-323D-45BE-9E16-16478CEB5605}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clientes.Migracoes", "Clientes.Migracoes\Clientes.Migracoes.csproj", "{4DB5DE7B-D93E-410B-9347-8DF17B99946B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,10 +57,6 @@ Global
 		{274BEFA2-323D-45BE-9E16-16478CEB5605}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{274BEFA2-323D-45BE-9E16-16478CEB5605}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{274BEFA2-323D-45BE-9E16-16478CEB5605}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DB5DE7B-D93E-410B-9347-8DF17B99946B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DB5DE7B-D93E-410B-9347-8DF17B99946B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DB5DE7B-D93E-410B-9347-8DF17B99946B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DB5DE7B-D93E-410B-9347-8DF17B99946B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

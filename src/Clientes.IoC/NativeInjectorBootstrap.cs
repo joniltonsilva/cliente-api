@@ -1,7 +1,7 @@
-﻿using Clientes.Biblioteca.Interfaces;
+﻿using Clientes.Aplicacao.Clientes.AutoMapper;
+using Clientes.Biblioteca.Interfaces;
 using Clientes.Biblioteca.Persistencia;
 using Clientes.Biblioteca.UnidadeDeTrabalho;
-using Clientes.Migracoes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,13 +17,13 @@ namespace Clientes.IoC
 
             services.AddScoped<IClienteDbContext>(provider => provider.GetService<ClienteDbContext>());
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddAutoMapper(typeof(ClienteProfile));
         }
 
         private static void MapSqliteDbOptions(DbContextOptionsBuilder options, IConfiguration configuration)
         {
-            options.UseSqlite(
-                        configuration.GetConnectionString("DefaultConnection"),
-                        b => b.MigrationsAssembly(typeof(ClientesMigracoesContext).Assembly.FullName));
+            options.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
         }
     }
 }

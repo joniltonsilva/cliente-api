@@ -1,15 +1,12 @@
 ﻿using Clientes.Biblioteca.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Linq;
 using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Clientes.Biblioteca.Persistencia
 {
-    public class ClienteDbContext : DbContext, IUnitOfWork
+    public class ClienteDbContext : DbContext, IClienteDbContext
     {
         public ClienteDbContext(DbContextOptions<ClienteDbContext> options)
          : base(options)
@@ -21,21 +18,6 @@ namespace Clientes.Biblioteca.Persistencia
             base.OnModelCreating(builder);
 
             ConfigureEntityTypeMapping(builder);
-        }
-
-        public async Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken)
-        {
-            return await Database.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
-        }
-
-        public async Task EndTransactionAsync(IDbContextTransaction transaction, CancellationToken cancellationToken)
-        {
-            await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
-        }
-
-        public async Task RollbackTransactionAsync(IDbContextTransaction transaction, CancellationToken cancellationToken)
-        {
-            await transaction.RollbackAsync(cancellationToken).ConfigureAwait(false);
         }
 
         private void ConfigureEntityTypeMapping(ModelBuilder builder)

@@ -11,9 +11,9 @@ namespace Clientes.Biblioteca.Repositorios
     {
         protected DbSet<TEntity> EntitySet { get; private set; }
 
-        public BaseEntidadeRepositorio(IUnitOfWork unitOfWork)
+        public BaseEntidadeRepositorio(IClienteDbContext dbContext)
         {
-            EntitySet = unitOfWork.Set<TEntity>();
+            EntitySet = dbContext.Set<TEntity>();
         }
 
         public TEntity Recuperar(int id)

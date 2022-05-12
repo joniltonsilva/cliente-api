@@ -1,5 +1,6 @@
 ﻿using Clientes.Biblioteca.Interfaces;
 using Clientes.Biblioteca.Persistencia;
+using Clientes.Biblioteca.UnidadeDeTrabalho;
 using Clientes.Migracoes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,7 +15,8 @@ namespace Clientes.IoC
             services.AddDbContextFactory<ClienteDbContext>(options => MapSqliteDbOptions(options, configuration));
             services.AddDbContext<ClienteDbContext>(options => MapSqliteDbOptions(options, configuration));
 
-            services.AddScoped<IUnitOfWork>(provider => provider.GetService<ClienteDbContext>());
+            services.AddScoped<IClienteDbContext>(provider => provider.GetService<ClienteDbContext>());
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         private static void MapSqliteDbOptions(DbContextOptionsBuilder options, IConfiguration configuration)

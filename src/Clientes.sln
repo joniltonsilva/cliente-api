@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clientes.IoC", "Clientes.Io
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clientes.DTO", "Clientes.DTO\Clientes.DTO.csproj", "{D3901ACC-670C-4667-AAD3-FF0E6FFAD32C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clientes.Biblioteca", "Clientes.Biblioteca\Clientes.Biblioteca.csproj", "{274BEFA2-323D-45BE-9E16-16478CEB5605}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{D3901ACC-670C-4667-AAD3-FF0E6FFAD32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3901ACC-670C-4667-AAD3-FF0E6FFAD32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3901ACC-670C-4667-AAD3-FF0E6FFAD32C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274BEFA2-323D-45BE-9E16-16478CEB5605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274BEFA2-323D-45BE-9E16-16478CEB5605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274BEFA2-323D-45BE-9E16-16478CEB5605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274BEFA2-323D-45BE-9E16-16478CEB5605}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
